@@ -2,15 +2,12 @@
 
 > A modern, elegant portfolio website showcasing data science and web development projects with a distinctive pink aesthetic.
 
-<img width="1470" height="878" alt="n1" src="https://github.com/user-attachments/assets/a66d19b1-736a-4f6b-adf2-d3100798ee8e" />
-<img width="1470" height="879" alt="n2" src="https://github.com/user-attachments/assets/da596ab5-03d9-4573-9294-bf72fd0ca368" />
-<img width="1470" height="878" alt="n3" src="https://github.com/user-attachments/assets/fadeabf7-36ab-48f8-ab1c-f50117dda60f" />
-<img width="1470" height="879" alt="n4" src="https://github.com/user-attachments/assets/e87d5394-7479-4d20-b9e8-3012a8a222ec" />
-<img width="1470" height="879" alt="n5" src="https://github.com/user-attachments/assets/e56baefc-9652-4891-8c83-e8c558c7c476" />
-<img width="1470" height="879" alt="n6" src="https://github.com/user-attachments/assets/77c77aad-ac89-432b-8efe-8eabb4f1f9cf" />
-
-
-
+<img width="1470" height="878" alt="n1" src="https://github.com/user-attachments/assets/6e841a54-5e15-4111-9888-7ce8123b6e0d" />
+<img width="1470" height="879" alt="n2" src="https://github.com/user-attachments/assets/56fa059a-a437-49c4-8d02-3ec6b13e3dec" />
+<img width="1470" height="878" alt="n3" src="https://github.com/user-attachments/assets/a098d256-a1be-4b84-b77e-59273066b4c1" />
+<img width="1470" height="879" alt="n4" src="https://github.com/user-attachments/assets/acf7c539-015c-4c26-8eb7-b28c9290a4a0" />
+<img width="1470" height="879" alt="n5" src="https://github.com/user-attachments/assets/fdaf6c19-52a6-48bf-bbd0-fd10d642e206" />
+<img width="1470" height="879" alt="n6" src="https://github.com/user-attachments/assets/d544c6c9-336a-4de5-aee8-68cbca95f303" />
 
 
 ## Features
@@ -37,36 +34,6 @@
 - **Forms**: Formspree integration for contact functionality
 - **Fonts**: Laviossa (headings) + Lora (body text)
 
-## 🏗️ Project Structure
-
-```
-📁 portfolio/
-├── 📄 index.html              # Landing page
-├── 🎨 index.css               # Main styles
-├── ⚡ script.js               # Interactive features
-├── 🖱️ cursor.css             # Custom cursor styles
-├── 📁 bio/                    # About me section
-│   ├── bio.html
-│   └── bio.css
-├── 📁 contact/                # Contact page
-│   ├── contact.html
-│   └── contact.css
-├── 📁 projet/                 # Projects section
-│   ├── projets.html           # Projects overview
-│   ├── projets.css
-│   ├── p1.html                # Individual project pages
-│   ├── p2.html
-│   └── ...
-├── 📁 css/                    # Reusable components
-│   ├── carousel.css
-│   └── lightbox.css
-├── 📁 js/                     # JavaScript modules
-│   ├── carousel.js
-│   └── lightbox.js
-└── 📁 font/                   # Custom fonts
-    ├── Laviossa-Medium.otf
-    └── Lora-VariableFont_wght.ttf
-```
 
 ## Design Highlights
 
