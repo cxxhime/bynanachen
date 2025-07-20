@@ -1,0 +1,870 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Pour les titres et éléments impactants */
+@font-face {
+    font-family: 'Laviossa';
+    src: url(../font/Laviossa-Medium.otf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* la hiérarchie */
+@font-face {
+    font-family: 'Lora';
+    src: url(../font/Lora-VariableFont_wght.ttf);
+    font-weight: 300 700; 
+    font-style: normal;
+}
+
+/* BODY  */
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-x: hidden;
+    font-family: 'Lora', serif;
+    font-weight: 400; 
+    background: linear-gradient(135deg, #131212 0%, #1a1a1a 30%, #0f0f0f 70%, #131212 100%);
+    position: relative;
+    padding-top: 200px;
+}
+
+/* Animation de fond moderne */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="modernPattern" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="1.5" fill="%23FFCDE0" opacity="0.1"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="4s" repeatCount="indefinite"/></circle><circle cx="6" cy="18" r="0.8" fill="%23FFCDE0" opacity="0.15"/><path d="M 0 25 L 25 0" stroke="%23FFCDE0" stroke-width="0.3" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23modernPattern)"/></svg>') repeat;
+    animation: subtleFloat 20s ease-in-out infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes subtleFloat {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-30px) translateX(-15px); }
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #131212;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #FFCDE0;
+    z-index: 999;
+    font-family: 'Laviossa', serif;
+    backdrop-filter: blur(10px);
+}
+
+#logo {
+    padding-left: 20px;
+    font-size: 3vw;
+    text-decoration: none;
+    color: #FFCDE0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: 'Laviossa', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#logo:hover {
+    transform: scale(1.05);
+    color: #FFCDE0;
+}
+
+#logo:visited, #logo:active, #logo:focus {
+    color: #FFCDE0;
+    text-decoration: none;
+    outline: none;
+}
+
+#navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0;
+    gap: 20px;
+}
+
+#navigation #menu {
+    font-family: 'Lora', serif;
+    font-weight: 550;
+    font-size: 2vw;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #FFCDE0;
+    position: relative;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+}
+
+#navigation #menu::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FFCDE0;
+    transition: width 0.3s ease;
+}
+
+#navigation #menu:hover {
+    transform: scale3d(1.05, 1.05, 1.05);
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 205, 224, 0.8);
+}
+
+#navigation #menu:hover::after {
+    width: 100%;
+}
+
+#navigation #menu:visited, #navigation #menu:active {
+    color: #FFCDE0;
+    text-decoration: none;
+}
+
+/* Liste projets */
+div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 5px;
+}
+
+#liste_projets {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 1vw;
+    font-family: 'Lora', serif;
+    flex-wrap: wrap;
+    position: relative;
+    padding-top: 50px;
+}
+
+#liste_projets a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#liste_projets a:visited,
+#liste_projets a:active,
+#liste_projets a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+#liste_projets a h3,
+#liste_projets a h5 {
+    text-decoration: none;
+}
+
+#liste_projets::before {
+    content: '- My projects -';
+    position: absolute;
+    top: -60px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 500; 
+    color: #FFCDE0;
+    text-align: center;
+    width: 100%;
+    font-family: 'Laviossa', serif;
+    text-shadow: 0 0 30px rgba(255, 205, 224, 0.5);
+    letter-spacing: 0.3px;
+}
+
+/* Cards projets  */
+.lesprojets {
+    width: 700px;
+    height: 500px;
+    background: linear-gradient(135deg, 
+        #FFCDE0 0%, 
+        rgba(255, 205, 224, 0.9) 50%, 
+        rgba(255, 205, 224, 0.8) 100%);
+    margin-bottom: 1.5vw;
+    border-radius: 10px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    color: #131212;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(255, 205, 224, 0.3);
+    border: 2px solid rgba(255, 205, 224, 0.1);
+}
+
+/* Effet de lumière au survol */
+.lesprojets::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+    transition: left 0.6s ease;
+}
+
+.lesprojets:hover::before {
+    left: 100%;
+}
+
+/* Effets de survol */
+#div1:hover, #div2:hover, #div3:hover, #div4:hover, #div5:hover, #div6:hover {
+    background-image: linear-gradient(
+        rgba(255, 205, 224, 0.3), 
+        rgba(19, 18, 18, 0.8)
+    ), url(Img/bio/nana.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 7px;
+    transform: scale3d(1.05, 1.05, 1.05) translateY(-10px);
+    color: #FFCDE0;
+    box-shadow: 0 25px 50px rgba(255, 205, 224, 0.4);
+    border-color: rgba(255, 205, 224, 0.6);
+}
+
+/* Gradients par projet */
+#div1:hover { 
+    background-image: url(../Img/medicalbear.avif);
+    background-size: cover;
+}
+
+#div2:hover { 
+    background-image: url(../Img/introvert.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+#div3:hover { 
+    background-image: url(../Img/exoplanet.avif);
+    background-size: cover;
+}
+
+#div4:hover { 
+    background-image: url(../Img/Frenz.jpeg);
+    background-size: cover;
+}
+
+#div5:hover { 
+    background-image: url(../Img/pocket.jpeg);
+    background-size: cover;
+}
+
+#div6:hover { 
+    background-image: url(../Img/bynana.png);
+    background-size: cover;
+}
+
+/* Indicateurs de statut */
+.lesprojets::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: statusPulse 2s infinite;
+}
+
+/* EN COURS = orange */
+#div1::after,
+#div2::after {
+  background: #f3bc69;
+  box-shadow: 0 0 15px rgba(195, 169, 130, 0.6);
+}
+
+/* TERMINÉ = vert */
+#div3::after,
+#div4::after,
+#div5::after,
+#div6::after {
+  background: #49b666;
+  box-shadow: 0 0 15px rgba(127, 184, 130, 0.6);
+}
+
+@keyframes statusPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+/* Contenu des cards  */
+h3 {
+    margin-bottom: 8px;
+    margin-left: 15px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    font-family: 'Lora', serif;
+    font-weight: 700; 
+    font-size: 1.4rem;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+}
+
+h5 {
+    margin-bottom: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+    font-family: 'Lora', serif;
+    font-weight: 400; 
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+    opacity: 0.85;
+}
+
+.lesprojets:hover h3 {
+    transform: translateY(-3px);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-weight: 700; 
+}
+
+.lesprojets:hover h5 {
+    transform: translateY(-2px);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1; 
+}
+
+/* Projet  */
+#elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, 
+        rgba(255, 205, 224, 0.1) 0%, 
+        rgba(19, 18, 18, 0.95) 50%, 
+        rgba(19, 18, 18, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    padding: 4rem 3rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    width: 90%;
+    border: 1px solid rgba(255, 205, 224, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+#elements::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 205, 224, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#titlerp {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-family: 'Laviossa', serif; 
+    font-weight: 500;
+    text-align: center;
+    background: linear-gradient(45deg, #ffffff, #FFCDE0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 30px rgba(255, 205, 224, 0.3);
+    letter-spacing: 0.5px;
+}
+
+#elements h1 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-family: 'Lora', serif;
+    font-weight: 700; 
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    letter-spacing: 0.3px;
+}
+
+#elements h1::before {
+    content: '';
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(45deg, #FFCDE0, rgba(255, 205, 224, 0.5));
+    border-radius: 2px;
+    animation: pulse 2s infinite;
+}
+
+#elements h3 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-family: 'Lora', serif;
+    font-weight: 600; 
+    color: #FFCDE0;
+    margin: 2rem 0 1rem 0;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    letter-spacing: 0.3px;
+}
+
+#elements h3::before {
+    content: '▶';
+    color: #FFCDE0;
+    font-size: 0.8em;
+}
+
+#elements p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-family: 'Lora', serif;
+    font-weight: 400; 
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    letter-spacing: 0.2px;
+}
+
+#elements p strong {
+    color: #ffffff;
+    font-weight: 700;
+    background:  #FFCDE0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#rpimg {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 205, 224, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+#rpimg:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(255, 205, 224, 0.4);
+    border-color: rgba(255, 205, 224, 0.5);
+}
+
+#github {
+    background: linear-gradient(45deg, #FFCDE0, rgba(255, 205, 224, 0.5));
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-family: 'Lora', serif;
+    font-weight: 600; 
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#github:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(45deg, rgba(255, 205, 224, 0.5), #FFCDE0);
+}
+
+/* étape présentation projet sur page projet */
+.challenge-card, .solution-card, .results-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 205, 224, 0.2);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    font-family: 'Lora', serif;
+}
+
+.challenge-card:hover, .solution-card:hover, .results-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 205, 224, 0.2);
+    border-color: rgba(255, 205, 224, 0.3);
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+    background-color: #131212;
+    color: #FFCDE0;
+    padding: 30px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.05);  
+    font-family: 'Lora', serif;
+    font-weight: 400; 
+}
+
+footer h4 {
+    font-weight: 500; 
+    letter-spacing: 0.3px;
+}
+
+footer a {
+    color: #FFCDE0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600; 
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 205, 224, 0.5);
+}
+
+/* Animation */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lesprojets, #elements > * {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.lesprojets:nth-child(1), #elements > *:nth-child(1) { animation-delay: 0.1s; }
+.lesprojets:nth-child(2), #elements > *:nth-child(2) { animation-delay: 0.2s; }
+.lesprojets:nth-child(3), #elements > *:nth-child(3) { animation-delay: 0.3s; }
+.lesprojets:nth-child(4), #elements > *:nth-child(4) { animation-delay: 0.4s; }
+.lesprojets:nth-child(5), #elements > *:nth-child(5) { animation-delay: 0.5s; }
+.lesprojets:nth-child(6), #elements > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Responsive */
+@media screen and (min-width: 1920px) {
+    /* Projets et index seulement */
+    .rp, #rp1, .lesprojets {
+        width: 900px; 
+        height: 600px; 
+    }
+    
+    /* Index seulement */
+    #intro {
+        font-size: 4vw; 
+    }
+    #intro2 {
+        font-size: 3vw; 
+    }
+    
+    /* Bio seulement */
+    .main-container {
+        max-width: 1600px;
+        grid-template-columns: 450px 1fr;
+        gap: 5rem;
+    }
+    .photo-container {
+        width: 400px;
+        height: 400px;
+    }
+    
+    /* Header universel */
+    #logo {
+        font-size: 2vw; 
+    }
+    #navigation #menu, #navigation a {
+        font-size: 1.5vw; 
+    }
+    
+    /* Textes projets */
+    h3 {
+        font-size: 1.6rem;
+    }
+    h5 {
+        font-size: 1.1rem;
+    }
+}
+
+/* tablette  */
+@media screen and (max-width: 1280px) {
+    body {
+        justify-content: center;
+    }
+    
+    header, footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+        width: 100%;
+    }
+    
+    #logo {
+        padding-left: 20px;
+        font-size: 3vw;
+    }
+    
+    #navigation {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 0;
+        gap: 20px;
+    }
+    
+    #navigation #menu, #navigation a {
+        margin-right: 0;
+        font-weight: 550;
+        font-size: 2vw;
+    }
+    
+    /* Projets */
+    .rp, #rp1, .lesprojets {
+        width: 550px;
+        height: 450px;
+    }
+    
+    /* Contact */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 2rem 2rem;
+    }
+    
+    /* Bio */
+    .main-container {
+        grid-template-columns: 350px 1fr;
+        gap: 3rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    h5 {
+        font-size: 0.9rem;
+    }
+}
+
+/* mobile  */
+@media screen and (max-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        padding-top: 80px; 
+    }
+    
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+        width: 100%;
+        margin: 0;
+    }
+    
+    #logo {
+        padding-left: 10px;
+        font-size: 4vw;
+    }
+    
+    #navigation {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 2vw;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        gap: 15px;
+    }
+    
+    #navigation #menu, #navigation a {
+        font-size: 3vw; 
+        font-weight: 550; 
+        margin-right: 0;
+    }
+    
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        font-size: 0.9rem; 
+        padding: 10px;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .rp, #rp1, .lesprojets {
+        width: 350px;
+        height: 300px;
+    }
+    
+    #intro {
+        font-size: 5vw;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 80px;
+    }
+    #press {
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+    .arrow {
+        font-size: 100px;
+    }
+    #intro2 {
+        margin-bottom: 20px;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem 2rem; 
+    }
+    .contact-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .contact-form-section {
+        padding: 2rem;
+    }
+    .social-links {
+        justify-content: center;
+    }
+    
+    /* Bio  */
+    .main-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem 2rem;
+    }
+    .photo-section {
+        position: relative;
+        top: auto;
+    }
+    .photo-container {
+        width: 250px;
+        height: 250px;
+    }
+    .about-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 0.8rem;
+    }
+    .skill-item {
+        min-height: 50px;
+        font-size: 0.9rem;
+        padding: 0.8rem 0.5rem;
+    }
+    
+    /* Projets */
+    #elements {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+        width: 95%;
+    }
+    #titlerp {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    #github {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    
+    h3 {
+        font-size: 0.9rem;
+        margin-top: 10px;
+        font-weight: 700; 
+    }
+    h5 {
+        font-size: 0.8rem;
+        font-weight: 400; 
+    }
+}
+/* scrollbar rose */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #131212;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #FFCDE0, rgb(198, 148, 172));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, rgb(198, 148, 172), #FFCDE0);
+}

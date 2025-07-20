@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bynanachen</title>
+    <link rel="stylesheet" href="./projets.css">
+    <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="stylesheet" href="../css/carousel.css">
+    <link rel="stylesheet" href="../css/lightbox.css">
+    <link rel="icon" type="image/svg+xml" href="./logo/bynanachen.svg">
+    <link rel="icon" type="image/png" href="./logo/bynanachen.png">
+
+    <style>
+    #rockyorgaseous, #boxplt, #clustering {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 7px;
+    margin: 2rem 0;
+    box-shadow: none; 
+    border: none; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    #rockyorgaseous:hover, #boxplt:hover, #clustering:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(255, 205, 224, 0.4);
+        border-color: rgba(255, 205, 224, 0.5);
+        border-radius: 7px;
+    }
+
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        cursor: pointer;
+    }
+
+    .lightbox img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 15px;
+        box-shadow: 0 25px 50px rgba(255, 205, 224, 0.5);
+    }
+
+    .close-lightbox {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #FFCDE0;
+        font-size: 40px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    // lightbox
+    function openLightbox(imageSrc) {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <span class="close-lightbox">&times;</span>
+            <img src="${imageSrc}" alt="Enlarged view">
+        `;
+        
+        document.body.appendChild(lightbox);
+        lightbox.style.display = 'block';
+        
+        // Fermer au clic
+        lightbox.addEventListener('click', () => {
+            document.body.removeChild(lightbox);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('rockyorgaseous').addEventListener('click', () => {
+            openLightbox('img/projets/p3/rockyorgaseous.png');
+        });
+        
+        document.getElementById('boxplt').addEventListener('click', () => {
+            openLightbox('./img/projets/p3/boxplt.png');
+        });
+        
+        document.getElementById('clustering').addEventListener('click', () => {
+            openLightbox('./img/projets/p3/clustering.png');
+        });
+    });
+</script>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <!--HEADER-->
+    <header class="header">
+        <span>
+            <a href="../index.html" id="logo">NANA CHEN</a>
+        </span>
+        <span id="navigation">
+            <a href="../index.html" id="menu">Home</a>
+            <a href="./projets.html" id="menu">Projects</a>
+            <a href="/index/bio/bio.html" id="menu">About me</a>
+            <a href="/index/contact/contact.html" id="menu">Contact</a>
+        </span>
+    </header>
+
+    <!--Projet-->
+    <span id="elements">
+        <h1 id="titlerp">ByNanaChen Portfolio</h1>
+        
+        <div class="project-carousel" 
+                data-title="Demo Here"
+                data-images='["./img/projets/p6/n1.png", "./img/projets/p6/n2.png", "./img/projets/p6/n3.png", "./img/projets/p6/n4.png", "./img/projets/p6/n5.png"]'
+                data-descriptions='["Home","Home recents project","All projects","About me","Contact"]'>
+        </div>
+
+
+        <!-- THE CHALLENGE -->
+        <div class="challenge-card">
+            <h3>The Challenge</h3>
+            <p>
+                Creating a personal portfolio that stands out in a saturated market of generic developer websites while demonstrating technical competency without frameworks and establishing a memorable personal brand that reflects personality while maintaining professional credibility.
+            </p>
+            <p>
+                ByNanaChen needed to transcend typical student portfolios by creating memorable first impressions through distinctive design, demonstrating personality and creativity alongside technical skills, showing attention to user experience and visual hierarchy, and proving ability to complete and polish projects to professional standards.
+            </p>
+        </div>
+
+        <!-- THE SOLUTION -->
+        <div class="solution-card">
+            <h3>The Solution</h3>
+            
+            <p>
+                <strong>Creative Vision & Design Philosophy</strong><br>
+                ByNanaChen represents a bold departure from traditional portfolio templates. Built with a <strong>romantic rose aesthetic</strong> (#FFCDE0) that challenges the conventional blue/gray developer palette, this site creates an intimate, personal connection with visitors while maintaining professional credibility.
+            </p>
+
+            <p>
+                <strong>Emotional Branding Through Color</strong><br>
+                The signature <strong>pink gradient theme</strong> isn't just aesthetic—it's a statement. In a field dominated by sterile designs, this warm, inviting palette reflects personality and creativity, proving that technical expertise can coexist with artistic sensibility.
+            </p>
+
+            <p>
+                <strong>Dark Elegance Foundation</strong><br>
+                ✦ <strong>Base:</strong> Deep charcoal (#131212) creates sophisticated contrast<br>
+                ✦ <strong>Accent:</strong> Custom pink gradient (#FFCDE0) for warmth and personality<br>
+                ✦ <strong>Typography:</strong> Laviossa + Lora font pairing for elegant hierarchy<br>
+                ✦ <strong>Animation:</strong> Subtle floating patterns with animated background elements
+            </p>
+
+            <p>
+                <strong>Technical Architecture</strong><br>
+                Built intentionally with vanilla <strong>HTML5/CSS3</strong> and minimal JavaScript to demonstrate fundamental web development skills without framework dependency.
+            </p>
+
+            <p>
+                <strong>Custom Interaction Systems</strong><br>
+                ✦ <strong>Cursor Magic:</strong> Custom pink glowing cursor with trailing effects<br>
+                ✦ <strong>Smooth Animations:</strong> CSS transitions and keyframe animations<br>
+                ✦ <strong>Interactive Cards:</strong> Hover states with image reveals and scaling effects<br>
+                ✦ <strong>Responsive Design:</strong> Mobile-first approach with fluid layouts
+            </p>
+
+            <p>
+                <strong>User Experience Innovation</strong><br>
+                The site unfolds like a personal narrative: Welcome → Recent Projects → Complete Portfolio → About Me → Contact. Each page transition feels intentional and guided.
+            </p>
+
+            <p>
+                <strong>Visual Hierarchy Mastery</strong><br>
+                ✦ <strong>Landing Page:</strong> Gradient text effects with animated call-to-action<br>
+                ✦ <strong>Project Grid:</strong> Card-based layout with status indicators (orange = in progress, green = completed)<br>
+                ✦ <strong>Project Pages:</strong> Structured content with glassmorphism containers<br>
+                ✦ <strong>Interactive Elements:</strong> Lightbox gallery system and image carousels
+            </p>
+
+            <p>
+                <strong>Advanced CSS Features</strong><br>
+                ✦ <strong>Glassmorphism:</strong> Backdrop-filter blur effects for depth<br>
+                ✦ <strong>Custom Properties:</strong> CSS variables for consistent theming<br>
+                ✦ <strong>Grid & Flexbox:</strong> Advanced layout systems<br>
+                ✦ <strong>Responsive Typography:</strong> Clamp() for fluid scaling<br>
+                ✦ <strong>SVG Animations:</strong> Animated background patterns
+            </p>
+
+            <p>
+                <strong>Performance Optimization</strong><br>
+                ✦ <strong>Minimal Dependencies:</strong> No external frameworks<br>
+                ✦ <strong>Optimized Assets:</strong> Efficient image loading and CSS organization<br>
+                ✦ <strong>Progressive Enhancement:</strong> Graceful fallbacks for older browsers
+            </p>
+
+            <p>
+                <strong>Content Strategy</strong><br>
+                Each project presentation is tailored to its type with clear problem statements, solution architecture, visual evidence through screenshots and code snippets, and impact metrics with results highlighted.
+            </p>
+
+            <p>
+                <strong>Interactive Components</strong><br>
+                ✦ <strong>Smooth Scrolling:</strong> Enhanced navigation experience<br>
+                ✦ <strong>Image Lightbox:</strong> Custom-built gallery system<br>
+                ✦ <strong>Carousel Component:</strong> Project image galleries<br>
+                ✦ <strong>Form Handling:</strong> Contact form with Formspree integration<br>
+                ✦ <strong>Cursor Tracking:</strong> Dynamic cursor effects
+            </p>
+
+            <p>
+                <strong>Mobile-First Responsive Design</strong><br>
+                ✦ <strong>Desktop:</strong> Full-featured experience with animations<br>
+                ✦ <strong>Tablet:</strong> Optimized card sizes and navigation<br>
+                ✦ <strong>Mobile:</strong> Simplified layout with touch-friendly interactions<br>
+                ✦ <strong>Accessibility:</strong> Proper semantic markup and ARIA labels
+            </p>
+        </div>
+
+        <!-- THE RESULTS -->
+        <div class="results-card">
+            <h3>The Results</h3>
+            
+            <p>
+                <strong>Personal Branding Success</strong><br>
+                This portfolio successfully balances:<br>
+                ✦ <strong>Professional Credibility:</strong> Clean code and structured content<br>
+                ✦ <strong>Personal Authenticity:</strong> Unique aesthetic and genuine voice<br>
+                ✦ <strong>Technical Skill:</strong> Advanced CSS and thoughtful UX decisions<br>
+                ✦ <strong>Creative Vision:</strong> Bold design choices that stand out
+            </p>
+
+            <p>
+                <strong>Impact & Results</strong><br>
+                ✦  <strong>Performance Excellence:</strong> Fast loading with vanilla code architecture<br>
+                ✦  <strong>Cross-Device Compatibility:</strong> Seamless experience across desktop, tablet, and mobile<br>
+                ✦  <strong>Interactive Innovation:</strong> Custom-built components rival framework-based solutions<br>
+                ✦  <strong>Code Quality:</strong> Clean, organized, and maintainable vanilla implementation<br>
+                ✦  <strong>Distinctive Identity:</strong> Immediately recognizable aesthetic in a crowded field<br>
+                ✦  <strong>Professional Credibility:</strong> Technical precision meets creative expression
+            </p>
+
+            <p>
+                <strong>Development Insights</strong><br>
+                The site serves as both portfolio and learning record, showcasing growth from basic HTML/CSS to advanced frontend techniques. Each page represents mastery of different skills:<br>
+                ✦ <strong>Index:</strong> Landing page optimization and visual impact<br>
+                ✦ <strong>Projects:</strong> Content organization and presentation<br>
+                ✦ <strong>About:</strong> Personal branding and storytelling<br>
+                ✦ <strong>Contact:</strong> Form handling and user interaction
+            </p>
+
+            <p>
+                <strong>Beyond Technical Demo</strong><br>
+                ByNanaChen transcends typical student portfolios by creating memorable first impressions through distinctive design, demonstrating personality and creativity alongside technical skills, showing attention to user experience and visual hierarchy, and proving ability to complete and polish projects to professional standards.
+            </p>
+        </div>
+        
+        <button id="github" onclick="window.open('https://github.com/cxxhime/bynanachen', '_blank')">View Source Code</button>
+    </span>
+
+    <script src="script.js"></script>
+    <script src="../js/carousel.js"></script>
+    <script src="../js/lightbox.js"></script>
+
+    <!--CURSEUR-->
+    <script type="text/javascript">
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            let x = e.clientX - 15; 
+            let y = e.clientY - 15; 
+
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            cursor.style.display = "block";
+        });
+
+        document.addEventListener("mouseout", () => {
+            cursor.style.display = "none";
+        });
+    </script>
+</body>
+<!--FOOTER-->
+    <footer>
+        <h4>© 2025 bynanachen. By myself.</h4>
+        <h4>🌱Social Media: 
+            <a href="https://github.com/cxxhime" target="_blank">Github</a>/
+            <a href="https://www.linkedin.com/in/cxxhime/" target="_blank">LinkedIn</a>
+        </h4>
+    </footer>
+</html>

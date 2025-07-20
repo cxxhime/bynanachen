@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./css/cursor.css"">
+    <link rel="icon" type="image/svg+xml" href="./logo/bynanachen.svg">
+    <link rel="icon" type="image/png" href="./logo/bynanachen.png">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <!--HEADER-->
+    <header class="header">
+        <span>
+            <a href="./index.html" id="logo">NANA CHEN</a>
+        </span>
+        <span id="navigation">
+            <a href="./index.html" id="menu">Home</a>
+            <a href="./projet/projets.html" id="menu">Projects</a>
+            <a href="./bio/bio.html" id="menu">About me</a>
+            <a href="./contact/contact.html" id="menu">Contact</a>
+        </span>
+    </header>
+
+    <!--Piste d'atterissage-->
+    <div id="intro">
+        <p id="hi">Hey, I'm Nana, a simple data & AI student.</p>
+        <h1>Welcome, feel free to look around!</h1>
+    </div>
+
+    <div><p id="press">Press Here</p></div>
+    <a href="#intro2" class="arrow">
+        <span class="arrow-icon">↓</span>
+    </a>
+    
+    <h2 id="intro2">- Most recent projects -</h2>
+    <!--Page Accueil avec 4 projet les plus récents-->
+    <section id="rp_list">
+        <a href="./projet/p1.html">
+            <div id="rp1" class="cible">
+                <span>
+                    <h3>Medical Appointments Analysis</h3>
+                    <h5>Analysis about no show appointments with SQL</h5>
+                </span>
+            </div>
+        </a>
+        <a href="./projet/p2.html">
+            <div id="rp2" class="rp">
+                <span>
+                    <h3>Profiling Psychologique</h3>
+                    <h5>Why are some people introverted and others extroverted ?</h5>
+                </span>
+            </div>
+        </a>
+        <a href="./projet/p3.html">
+            <div id="rp3" class="rp">
+                <span>
+                    <h3>Nasa Exoplanet Analysis</h3>
+                    <h5>A complete analysis of exoplanets and the use of ML for predictions</h5>
+                </span>
+            </div>
+        </a>
+        <a href="./projet/p4.html">
+            <div id="rp4" class="rp">
+                <span>
+                    <h3>Frenz</h3>
+                    <h5>Social media using Strapi back-end and React front-end</h5>
+                </span>
+            </div>
+        </a>
+    </section>
+    
+    <!--CURSEUR-->
+    <script type="text/javascript">
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            let x = e.clientX - 15; 
+            let y = e.clientY - 15; 
+
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            cursor.style.display = "block";
+        });
+
+        document.addEventListener("mouseout", () => {
+            cursor.style.display = "none";
+        });
+    </script>
+</body>
+<footer>
+    <h4>
+        © 2025 bynanachen. By myself.  
+    </h4>
+    <h4>
+        🌱SocialMedia: <a href="https://github.com/cxxhime" target="_blank">Github</a>/<a href="https://www.linkedin.com/in/cxxhime/" target="_blank">LinkedIn</a>
+    </h4>
+</footer>
+
+</html>

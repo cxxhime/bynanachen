@@ -1,0 +1,46 @@
+body, a, button, input, textarea, select {
+    cursor: none !important;
+}
+
+.cursor{
+    z-index: 1000;
+    position: fixed;
+    background-color: #FFCDE0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 20px #FFCDE0,
+                0 0 60px #FFCDE0,
+                0 0 100px #FFCDE0;
+}
+
+.cursor:before{
+    content: '';
+    position: absolute;
+    background: #FFCDE0;
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+    transform: translate(-30%, -30%);
+    border-radius: 50%;
+}
+@media screen and (max-width: 1280px){
+    h1{
+        font-size: 80px;
+    }
+    }
+
+@media screen and (max-width: 768px){
+    h1{
+        font-size: 40px;
+    }
+    .cursor{
+        display: none;
+        background: none;
+        box-shadow: none;
+    }
+    .cursor:before{
+        display: none;
+    }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <link rel="stylesheet" href="./bio.css">
+    <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="icon" type="image/svg+xml" href="./logo/bynanachen.svg">
+    <link rel="icon" type="image/png" href="./logo/bynanachen.png">
+</head>
+<body>
+    <div class="cursor"></div>
+    <!--HEADER-->
+    <header class="header">
+        <span>
+            <a href="../index.html" id="logo">NANA CHEN</a>
+        </span>
+        <span id="navigation">
+            <a href="../index.html" id="menu">Home</a>
+            <a href="../projet/projets.html" id="menu">Projects</a>
+            <a href="./bio.html" id="menu">About me</a>
+            <a href="../contact/contact.html" id="menu">Contact</a>
+        </span>
+    </header>
+
+    <!--MAIN CONTENT-->
+    <div class="main-container">
+        <!-- Photo Section -->
+        <div class="photo-section">
+            <div class="photo-container">
+                <!-- pp -->
+                <img src="../Img/ nana.jpg" alt="Nana Chen" class="profile-photo">
+            </div>
+            <div class="quote-bubble">
+                <p class="quote-text">"Passionate about turning data into stories that matter ✨"</p>
+            </div>
+        </div>
+
+        <!-- About Content -->
+        <div class="about-content">
+            <h1 class="about-title">About Me</h1>
+
+            <div class="about-section">
+                <h2 class="section-title">
+                    WHO I AM ?
+                </h2>
+                <div class="section-content">
+                    <p>
+                        Hey there, I'm Nana! After a background in design, I decided to dive into the world of data.
+                        What drew me to data science is the natural continuity with design: transforming information into compelling visual stories. <br>
+                        <br>
+                        My design background sparked my curiosity about the data behind user behavior, and now I love the full cycle from analyzing data to creating beautiful ways to present it.
+                        I'm also interested in web development because I love beautiful interfaces and especially that intense satisfaction of seeing the final result of my work come to life! There's nothing more rewarding than spending hours on code or data and finally seeing something concrete and beautiful appear on screen. <br>
+                        <br>
+                        I've always been passionate about technology, and eventually I want to evolve towards AI to combine creativity and innovation. <br>
+                        <br>
+                        My journey? A logical evolution from static visuals to dynamic analysis!
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2 class="section-title">
+                    My personnality ENFP
+                </h2>
+                <div class="section-content">
+                    <p>
+                        I'm naturally curious and always excited to learn new things! I love exploring different topics and getting obsessed with random stuff. <br>
+                        <br>
+                        I'm chinese and I absolutely love my country! I'm fascinated by China's incredible technological development it's amazing to see how fast everything evolves there! <br>
+                        <br>
+                        My hobbies are playing games with friends, even though I can be a bit of a rager sometimes (but it's OK!), watching chinese historical drama and I'm completely obsessed with my little cat Snowi! I love giving him cuddles even though he's not always in the mood for it :(
+                    </p>
+                        <br>
+                    <div class="personality-traits">
+                        <span class="trait-tag">Curious</span>
+                        <span class="trait-tag">Enthusiastic</span>
+                        <span class="trait-tag">Gaming</span>
+                        <span class="trait-tag">Cat Lover <3</span>
+                        <span class="trait-tag">Chinese</span>
+                        <span class="trait-tag">Tech-savvy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2 class="section-title">
+                    Tech stack
+                </h2>
+                <div class="section-content">
+                    <p>I'm constantly developing my skills in data science and programming. Here's my current technical stack:</p>
+                    <div class="skills-grid">
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">Pandas</div>
+                        <div class="skill-item">Matplotlib</div>
+                        <div class="skill-item">Seaborn</div>
+                        <div class="skill-item">Scikit-learn</div>
+                        <div class="skill-item">SQL</div>
+                        <div class="skill-item">Power BI</div>
+                        <div class="skill-item">Microsoft Office 365</div>
+                        <div class="skill-item">HTML/CSS</div>
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">React</div>
+                        <div class="skill-item">Figma</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2 class="section-title">
+                    Goals & Passions
+                </h2>
+                <div class="section-content">
+                    <p><strong>Now :</strong> Master the fundamentals of data analysis and build my portfolio with concrete, impactful projects.</p>
+                    <br>
+                    <p><strong>Later :</strong> Become an accomplished data scientist, capable of solving complex problems and bringing real value to companies and society.</p>
+                    <br>
+                    <p><strong>My passions :</strong>  I love creating beautiful things - whether it's designing stunning web interfaces or crafting compelling data visualizations that tell a story. There's something magical about transforming raw data into something visually appealing and meaningful that people actually want to interact with!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--CURSEUR-->
+    <script type="text/javascript">
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            let x = e.clientX - 10; 
+            let y = e.clientY - 10; 
+
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            cursor.style.display = "block";
+        });
+
+        document.addEventListener("mouseout", () => {
+            cursor.style.display = "none";
+        });
+    </script>
+</body>
+<!--FOOTER-->
+    <footer>
+        <h4>© 2025 bynanachen. By myself.</h4>
+        <h4>🌱Social Media: 
+            <a href="https://github.com/cxxhime" target="_blank">Github</a>/
+            <a href="https://www.linkedin.com/in/cxxhime/" target="_blank">LinkedIn</a>
+        </h4>
+    </footer>
+</html>

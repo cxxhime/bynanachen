@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frenz</title>
+    <link rel="stylesheet" href="./projets.css">
+    <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="stylesheet" href="../css/carousel.css">
+    <link rel="stylesheet" href="../css/lightbox.css">
+    <link rel="icon" type="image/svg+xml" href="./logo/bynanachen.svg">
+    <link rel="icon" type="image/png" href="./logo/bynanachen.png">
+
+    <style>
+    #rockyorgaseous, #boxplt, #clustering {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 7px;
+    margin: 2rem 0;
+    box-shadow: none; 
+    border: none; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    #rockyorgaseous:hover, #boxplt:hover, #clustering:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(255, 205, 224, 0.4);
+        border-color: rgba(255, 205, 224, 0.5);
+        border-radius: 7px;
+    }
+
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        cursor: pointer;
+    }
+
+    .lightbox img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 15px;
+        box-shadow: 0 25px 50px rgba(255, 205, 224, 0.5);
+    }
+
+    .close-lightbox {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #FFCDE0;
+        font-size: 40px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    // lightbox
+    function openLightbox(imageSrc) {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <span class="close-lightbox">&times;</span>
+            <img src="${imageSrc}" alt="Enlarged view">
+        `;
+        
+        document.body.appendChild(lightbox);
+        lightbox.style.display = 'block';
+        
+        // Fermer au clic
+        lightbox.addEventListener('click', () => {
+            document.body.removeChild(lightbox);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('rockyorgaseous').addEventListener('click', () => {
+            openLightbox('img/projets/p3/rockyorgaseous.png');
+        });
+        
+        document.getElementById('boxplt').addEventListener('click', () => {
+            openLightbox('./img/projets/p3/boxplt.png');
+        });
+        
+        document.getElementById('clustering').addEventListener('click', () => {
+            openLightbox('./img/projets/p3/clustering.png');
+        });
+    });
+</script>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <!--HEADER-->
+    <header class="header">
+        <span>
+            <a href="../index.html" id="logo">NANA CHEN</a>
+        </span>
+        <span id="navigation">
+            <a href="../index.html" id="menu">Home</a>
+            <a href="./projets.html" id="menu">Projects</a>
+            <a href="/index/bio/bio.html" id="menu">About me</a>
+            <a href="/index/contact/contact.html" id="menu">Contact</a>
+        </span>
+    </header>
+
+    <!--Projet-->
+    <span id="elements">
+        <h1 id="titlerp">Frenz - Modern Social Platform</h1>
+        
+        <div class="project-carousel" 
+            data-title="Demo Here"
+            data-images='["./img/projets/p4/frenz1.jpeg", "./img/projets/p4/frenz2.jpeg", "./img/projets/p4/frenz3.jpeg", "./img/projets/p4/frenz4.jpeg", "./img/projets/p4/frenz5.jpeg", "./img/projets/p4/frenz6.jpeg"]'
+            data-descriptions='["Login Interface","Main Feed","Create Post","Search & Discovery","User Profile","Community Interaction"]'>
+        </div>
+        
+        <!-- THE CHALLENGE -->
+        <div class="challenge-card">
+            <h3>The Challenge</h3>
+            <p>
+                <strong>Design Philosophy</strong><br>
+                <strong>Clean, intuitive, and conversation-focused</strong><br>
+                Frenz breaks away from cluttered social media interfaces by prioritizing <strong>content readability</strong> and <strong>user engagement</strong>. Every design decision was made to enhance the social experience, not overwhelm it.
+            </p>
+        </div>
+
+        <!-- THE SOLUTION -->
+        <div class="solution-card">
+            <h3>The Solution</h3>
+            
+            <p>
+                <strong>Visual Identity & UI Design</strong><br>
+                <strong>Color System</strong><br>
+                <strong>Primary Palette</strong><br>
+                ✦ <strong>Background:</strong> Deep charcoal (#1a1a1a) for reduced eye strain<br>
+                ✦ <strong>Cards:</strong> Subtle gray (#272626) with soft shadows for depth<br>
+                ✦ <strong>Accent:</strong> Vibrant lime green (#CCDF5E) for key actions and branding<br>
+                ✦ <strong>Input fields:</strong> Pure black (#000000) with lime green focus rings<br>
+                ✦ <strong>Text:</strong> High contrast whites and grays for optimal readability
+            </p>
+            
+            <p>
+                <strong>Theme-Based Color Coding</strong><br>
+                Each content category has its distinctive color:<br>
+                ✦ <strong>General</strong> → Blue for universal content<br>
+                ✦ <strong>Game</strong> → Green for gaming discussions<br>
+                ✦ <strong>Sport</strong> → Red for sports energy<br>
+                ✦ <strong>Culture</strong> → Purple for creative content<br>
+                ✦ <strong>Tech</strong> → Yellow for technology topics<br>
+                ✦ <strong>Education</strong> → Orange for learning content
+            </p>
+            
+            <p>
+                <strong>Typography Hierarchy</strong><br>
+                Baloo 2 custom font family prioritizing readability:<br>
+                ✦ <strong>Headers:</strong> Baloo 2 Bold (700) & ExtraBold (800) for strong visual hierarchy<br>
+                ✦ <strong>Body text:</strong> Baloo 2 Regular (400) & Medium (500) for optimal readability<br>
+                ✦ <strong>UI elements:</strong> Baloo 2 SemiBold (600) for buttons and interactive elements<br>
+                ✦ <strong>Responsive scaling</strong> → Consistent font weights across all screen sizes
+            </p>
+
+            <p>
+                <strong>User Experience Design</strong><br>
+                <strong>Navigation Architecture</strong><br>
+                <strong>Intuitive three-tier navigation:</strong><br>
+                ✦ <strong>Top bar</strong> → Search, notifications, profile access<br>
+                ✦ <strong>Sidebar</strong> → Theme navigation, trending content, suggestions<br>
+                ✦ <strong>Main content</strong> → Clean feed with clear post separation
+            </p>
+
+            <p>
+                <strong>User Flow Optimization</strong><br>
+                <strong>Streamlined interactions:</strong><br>
+                ✦ <strong>Post creation system</strong> with image upload functionality<br>
+                ✦ <strong>Comment management</strong> with editing capabilities<br>
+                ✦ <strong>Search functionality</strong> for content discovery<br>
+                ✦ <strong>User authentication</strong> system with session management
+            </p>
+
+            <p>
+                <strong>Modern Web Architecture</strong><br>
+                ✦ <strong>Component-based design</strong> → Reusable interface elements<br>
+                ✦ <strong>Responsive layout</strong> → Adapts to different screen sizes<br>
+                ✦ <strong>Theme-based organization</strong> → Content categorization system<br>
+                ✦ <strong>Custom typography</strong> → Baloo 2 font family implementation
+            </p>
+
+            <p>
+                <strong>Interface Components</strong><br>
+                <strong>Post Cards - Modern card design with custom styling:</strong><br>
+                ✦ <strong>Border radius:</strong> 0.75rem (12px) for modern aesthetics<br>
+                ✦ <strong>Shadows:</strong> 0 25px 50px -12px rgba(0, 0, 0, 0.25) for depth<br>
+                ✦ <strong>Spacing:</strong> Max-width 50vw with responsive constraints<br>
+                ✦ <strong>Text handling:</strong> Word-wrap break-word for long content management
+            </p>
+
+            <p>
+                <strong>Profile Design - Clean, information-focused profiles:</strong><br>
+                ✦ <strong>Circular avatar</strong> with purple accent border<br>
+                ✦ <strong>Statistics cards</strong> with clear visual separation<br>
+                ✦ <strong>Recent activity</strong> feed with chronological layout<br>
+                ✦ <strong>Consistent color coding</strong> across all profile elements
+            </p>
+
+            <p>
+                <strong>Interactive Elements - Micro-interactions enhancing UX:</strong><br>
+                ✦ <strong>Hover effects</strong> on buttons and cards<br>
+                ✦ <strong>Loading states</strong> for better perceived performance<br>
+                ✦ <strong>Smooth animations</strong> (300ms transitions)<br>
+                ✦ <strong>Visual feedback</strong> for all user actions
+            </p>
+
+            <p>
+                <strong>Performance & Architecture</strong><br>
+                ✦ <strong>Component architecture</strong> → Organized and maintainable codebase<br>
+                ✦ <strong>Modern build tools</strong> → Vite for development and production<br>
+                ✦ <strong>Efficient data handling</strong> → Optimized API communication<br>
+                ✦ <strong>Cloud database integration</strong> → PostgreSQL with Neon hosting
+            </p>
+
+            <p>
+                <strong>State Management - Efficient data flow:</strong><br>
+                ✦ <strong>React hooks</strong> for local component state<br>
+                ✦ <strong>Context API</strong> for global user authentication<br>
+                ✦ <strong>Optimized re-renders</strong> → Performance-focused updates<br>
+                ✦ <strong>Local storage</strong> for user preferences
+            </p>
+
+            <p>
+                <strong>Performance Optimization - Fast, smooth user experience:</strong><br>
+                ✦ <strong>Lazy loading</strong> for images and components<br>
+                ✦ <strong>Code splitting</strong> for faster initial load<br>
+                ✦ <strong>Optimized bundle size</strong> → Minimal third-party dependencies<br>
+                ✦ <strong>Cached API responses</strong> → Reduced server requests
+            </p>
+        </div>
+
+        <!-- THE RESULTS -->
+        <div class="results-card">
+            <h3>The Results</h3>
+            
+            <p>
+                <strong>User-Centered Features</strong><br>
+                <strong>Content Discovery - Designed for exploration:</strong><br>
+                ✦ <strong>Visual theme indicators</strong> → Instant content categorization<br>
+                ✦ <strong>Trending sidebar</strong> → Discover popular content<br>
+                ✦ <strong>Smart search</strong> → Find relevant posts instantly<br>
+                ✦ <strong>Personalized suggestions</strong> → Curated content recommendations
+            </p>
+
+            <p>
+                <strong>Social Interaction - Meaningful connections:</strong><br>
+                ✦ <strong>Threaded comments</strong> → Organized discussions<br>
+                ✦ <strong>Save functionality</strong> → Bookmark valuable content<br>
+                ✦ <strong>User profiles</strong> → Build community connections<br>
+                ✦ <strong>Like system</strong> → Simple engagement mechanism
+            </p>
+
+            <p>
+                <strong>Responsive Experience - Seamless across devices:</strong><br>
+                ✦ <strong>Desktop interface</strong> → Full-featured browsing experience<br>
+                ✦ <strong>Flexible layout</strong> → Adapts to various screen sizes<br>
+                ✦ <strong>Modern browser support</strong> → Cross-browser functionality<br>
+                ✦ <strong>Consistent styling</strong> → Unified experience across devices
+            </p>
+
+            <p>
+                <strong>Design Achievements</strong><br>
+                ✦ <strong>Modern dark theme</strong> → Reduces eye strain, enhances focus<br>
+                ✦ <strong>Intuitive navigation</strong> → Users find content effortlessly<br>
+                ✦ <strong>Consistent visual language</strong> → Professional, cohesive interface<br>
+                ✦ <strong>Responsive excellence</strong> → Perfect experience on any device<br>
+                ✦ <strong>Accessibility compliance</strong> → Inclusive design for all users
+            </p>
+
+            <p>
+                <strong>Where design meets functionality - crafting social experiences that matter</strong>
+            </p>
+        </div>
+
+        <button id="github" onclick="window.open('https://github.com/cxxhime/Frenz', '_blank')">View Source Code</button>
+    </span>
+
+    <script src="script.js"></script>
+    <script src="../js/carousel.js"></script>
+    <script src="../js/lightbox.js"></script>
+
+    <!--CURSEUR-->
+    <script type="text/javascript">
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            let x = e.clientX - 15; 
+            let y = e.clientY - 15; 
+
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            cursor.style.display = "block";
+        });
+
+        document.addEventListener("mouseout", () => {
+            cursor.style.display = "none";
+        });
+    </script>
+</body>
+<!--FOOTER-->
+    <footer>
+        <h4>© 2025 bynanachen. By myself.</h4>
+        <h4>🌱Social Media: 
+            <a href="https://github.com/cxxhime" target="_blank">Github</a>/
+            <a href="https://www.linkedin.com/in/cxxhime/" target="_blank">LinkedIn</a>
+        </h4>
+    </footer>
+</html>

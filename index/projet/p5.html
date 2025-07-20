@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Pocket</title>
+    <link rel="stylesheet" href="./projets.css">
+    <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="stylesheet" href="../css/carousel.css">
+    <link rel="stylesheet" href="../css/lightbox.css">
+    <link rel="icon" type="image/svg+xml" href="./logo/bynanachen.svg">
+    <link rel="icon" type="image/png" href="./logo/bynanachen.png">
+
+    <style>
+    #rockyorgaseous, #boxplt, #clustering {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 7px;
+    margin: 2rem 0;
+    box-shadow: none; 
+    border: none; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    #rockyorgaseous:hover, #boxplt:hover, #clustering:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(255, 205, 224, 0.4);
+        border-color: rgba(255, 205, 224, 0.5);
+        border-radius: 7px;
+    }
+
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        cursor: pointer;
+    }
+
+    .lightbox img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 15px;
+        box-shadow: 0 25px 50px rgba(255, 205, 224, 0.5);
+    }
+
+    .close-lightbox {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #FFCDE0;
+        font-size: 40px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    // lightbox
+    function openLightbox(imageSrc) {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <span class="close-lightbox">&times;</span>
+            <img src="${imageSrc}" alt="Enlarged view">
+        `;
+        
+        document.body.appendChild(lightbox);
+        lightbox.style.display = 'block';
+        
+        // Fermer au clic
+        lightbox.addEventListener('click', () => {
+            document.body.removeChild(lightbox);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('rockyorgaseous').addEventListener('click', () => {
+            openLightbox('img/projets/p3/rockyorgaseous.png');
+        });
+        
+        document.getElementById('boxplt').addEventListener('click', () => {
+            openLightbox('./img/projets/p3/boxplt.png');
+        });
+        
+        document.getElementById('clustering').addEventListener('click', () => {
+            openLightbox('./img/projets/p3/clustering.png');
+        });
+    });
+</script>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <!--HEADER-->
+    <header class="header">
+        <span>
+            <a href="../index.html" id="logo">NANA CHEN</a>
+        </span>
+        <span id="navigation">
+            <a href="../index.html" id="menu">Home</a>
+            <a href="./projets.html" id="menu">Projects</a>
+            <a href="/index/bio/bio.html" id="menu">About me</a>
+            <a href="/index/contact/contact.html" id="menu">Contact</a>
+        </span>
+    </header>
+
+
+    <!--Projet-->
+    <span id="elements">
+        <h1 id="titlerp">Dashboard Pocket</h1>
+        
+        <div class="project-carousel" 
+            data-title="Demo Here"
+            data-images='["./img/projets/p5/pock1.jpeg", "./img/projets/p5/pock2.jpeg", "./img/projets/p5/pock3.jpeg", "./img/projets/p5/pock4.jpeg"]'
+            data-descriptions='["Dashboard Overview","Add Application","Application Details","Follow-up Alerts"]'>
+        </div>
+        
+        <!-- THE CHALLENGE -->
+        <div class="challenge-card">
+            <h3>The Problem</h3>
+            <p>
+                Job searching quickly generates chaos: applications sent, follow-ups needed, responses received. Without organization, opportunities are lost and crucial follow-ups are missed.
+            </p>
+        </div>
+
+        <!-- THE SOLUTION -->
+        <div class="solution-card">
+            <h3>The Solution</h3>
+            
+            <p>
+                <strong>Dashboard Pocket centralizes and automates application tracking with a clear interface and intelligent alerts.</strong>
+            </p>
+
+            <p>
+                <strong>Interface & Design</strong><br>
+                <strong>Cohesive Visual Identity</strong><br>
+                ✦ <strong>Color Palette:</strong> Purple-blue gradient (#bb99e9 → #99c2f2) for a professional yet calming atmosphere<br>
+                ✦ <strong>Typography:</strong> Segoe UI for optimal cross-platform readability<br>
+                ✦ <strong>Style:</strong> Modern glassmorphism with transparency and blur effects<br>
+                ✦ <strong>Color Coding:</strong> Intuitive status system (Indigo/Yellow/Green/Red/Orange)
+            </p>
+
+            <p>
+                <strong>Informative Dashboard</strong><br>
+                Immediate overview with color-coded metrics and prominent follow-up alerts. Interface focused on critical data readability.
+            </p>
+
+            <p>
+                <strong>Optimized Workflow</strong><br>
+                Sticky translucent navigation, centered forms with spacious fields, interactive cards with hover micro-animations. Visual architecture that naturally guides the user.
+            </p>
+
+            <p>
+                <strong>Key Features</strong><br>
+                <strong>Complete Management</strong><br>
+                ✦ Add/edit/delete job applications<br>
+                ✦ Track submission and automatic follow-up dates (7 days)<br>
+                ✦ Visual status with color codes
+            </p>
+
+            <p>
+                <strong>Built-in Intelligence</strong><br>
+                ✦ Automatic calculation of necessary follow-ups<br>
+                ✦ Visual alerts for urgent actions<br>
+                ✦ Multi-criteria filtering for quick retrieval
+            </p>
+
+            <p>
+                <strong>Responsive Experience</strong><br>
+                Mobile/desktop adaptive interface with intuitive navigation and optimized performance.
+            </p>
+
+            <p>
+                <strong>Tech Stack</strong><br>
+                <strong>Frontend:</strong> React 18 + Vite for rapid development, modern responsive CSS, Axios for data exchanges<br>
+                <strong>Backend:</strong> Node.js/Express with RESTful API, MongoDB/Mongoose for flexible storage, extensible modular architecture
+            </p>
+        </div>
+
+        <!-- THE RESULTS -->
+        <div class="results-card">
+            <h3>The Results</h3>
+            
+            <p>
+                <strong>Performance & Usability</strong><br>
+                ✦ <strong>Intuitive interface:</strong> immediate adoption<br>
+                ✦ <strong>Performance:</strong> instant actions<br>
+                ✦ <strong>Efficiency:</strong> zero forgotten applications<br>
+                ✦ <strong>Accessibility:</strong> fluid mobile/desktop usage
+            </p>
+
+            <p>
+                <strong>Impact</strong><br>
+                Dashboard Pocket transforms a stressful administrative task into a controlled process. Users spend less time searching for information and more time optimizing their applications.
+            </p>
+
+            <p>
+                <em>A project demonstrating the importance of UX in personal productivity: the right interface serving efficiency.</em>
+            </p>
+        </div>
+
+        <button id="github" onclick="window.open('https://github.com/cxxhime/dashboard-pocket', '_blank')">View Source Code</button>
+    </span>
+    <script src="script.js"></script>
+    <script src="../js/carousel.js"></script>
+    <script src="../js/lightbox.js"></script>
+
+    <!--CURSEUR-->
+    <script type="text/javascript">
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            let x = e.clientX - 15; 
+            let y = e.clientY - 15; 
+
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            cursor.style.display = "block";
+        });
+
+        document.addEventListener("mouseout", () => {
+            cursor.style.display = "none";
+        });
+    </script>
+</body>
+<!--FOOTER-->
+    <footer>
+        <h4>© 2025 bynanachen. By myself.</h4>
+        <h4>🌱Social Media: 
+            <a href="https://github.com/cxxhime" target="_blank">Github</a>/
+            <a href="https://www.linkedin.com/in/cxxhime/" target="_blank">LinkedIn</a>
+        </h4>
+    </footer>
+</html>

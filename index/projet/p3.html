@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa Exoplanet Analysis</title>
+    <link rel="stylesheet" href="./projets.css">
+    <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="stylesheet" href="../css/carousel.css">
+    <link rel="stylesheet" href="../css/lightbox.css">
+    <link rel="icon" type="image/svg+xml" href="./logo/bynanachen.svg">
+    <link rel="icon" type="image/png" href="./logo/bynanachen.png">
+
+    <style>
+    #rockyorgaseous, #boxplt, #clustering {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 7px;
+    margin: 2rem 0;
+    box-shadow: none; 
+    border: none; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    #rockyorgaseous:hover, #boxplt:hover, #clustering:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(255, 205, 224, 0.4);
+        border-color: rgba(255, 205, 224, 0.5);
+        border-radius: 7px;
+    }
+
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        cursor: pointer;
+    }
+
+    .lightbox img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 15px;
+        box-shadow: 0 25px 50px rgba(255, 205, 224, 0.5);
+    }
+
+    .close-lightbox {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #FFCDE0;
+        font-size: 40px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    // lightbox
+    function openLightbox(imageSrc) {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <span class="close-lightbox">&times;</span>
+            <img src="${imageSrc}" alt="Enlarged view">
+        `;
+        
+        document.body.appendChild(lightbox);
+        lightbox.style.display = 'block';
+        
+        // Fermer au clic
+        lightbox.addEventListener('click', () => {
+            document.body.removeChild(lightbox);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('rockyorgaseous').addEventListener('click', () => {
+            openLightbox('img/projets/p3/rockyorgaseous.png');
+        });
+        
+        document.getElementById('boxplt').addEventListener('click', () => {
+            openLightbox('./img/projets/p3/boxplt.png');
+        });
+        
+        document.getElementById('clustering').addEventListener('click', () => {
+            openLightbox('./img/projets/p3/clustering.png');
+        });
+    });
+</script>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <!--HEADER-->
+    <header class="header">
+        <span>
+            <a href="../index.html" id="logo">NANA CHEN</a>
+        </span>
+        <span id="navigation">
+            <a href="../index.html" id="menu">Home</a>
+            <a href="./projets.html" id="menu">Projects</a>
+            <a href="/index/bio/bio.html" id="menu">About me</a>
+            <a href="/index/contact/contact.html" id="menu">Contact</a>
+        </span>
+    </header>
+
+
+    <!--Projet-->
+    <span id="elements">
+        <h1 id="titlerp">NASA Exoplanet Analysis & Classification</h1>
+
+        <div class="project-carousel" 
+                data-title="Demo Here"
+                data-images='["./img/projets/p3/exo1.png", "./img/projets/p3/exo2.png", "./img/projets/p3/exo3.png", "./img/projets/p3/exo4.png", "./img/projets/p3/exo5.png", "./img/projets/p3/exo6.png", "./img/projets/p3/exo7.png", "./img/projets/p3/exo8.png", "./img/projets/p3/exo9.png", "./img/projets/p3/exo10.png"]'
+                data-descriptions='["Login Interface","Main Feed","Create Post","Search & Discovery","User Profile","Community Interaction"]'>
+        </div>
+        
+        <!-- THE CHALLENGE -->
+        <div class="challenge-card">
+            <h3>The Challenge</h3>
+            <p>
+                <strong>Project Overview</strong><br>
+                Comprehensive analysis of <strong>5,000+ confirmed exoplanets (38,000+ entries)</strong> from NASA Exoplanet Archive to identify classification patterns, validate physical relationships, and discover potentially habitable candidates using advanced statistical analysis and machine learning techniques. This project demonstrates large-scale data processing capabilities and innovative ML approaches applied to real-world scientific data.
+            </p>
+            
+            <p>
+                <strong>Problem Statement & Business Impact</strong><br>
+                In the era of big data astronomy where thousands of exoplanets are discovered annually, this project addresses critical challenges:<br>
+                ✦ How to efficiently classify and analyze massive astronomical datasets?<br>
+                ✦ What are the limitations and biases in current detection methods?<br>
+                ✦ Can we automate the identification of potentially habitable worlds?<br>
+                ✦ How do we validate universal physical laws across diverse planetary systems?
+            </p>
+        </div>
+
+        <!-- THE SOLUTION -->
+        <div class="solution-card">
+            <h3>The Solution</h3>
+            
+            <p>
+                <strong>Technical Stack & Architecture</strong><br>
+                <strong>1. Large-Scale Data Processing</strong><br>
+                ✦ <strong>Dataset:</strong> 5,903 confirmed exoplanets after comprehensive cleaning<br>
+                ✦ <strong>Dimensionality:</strong> Multi-parameter analysis (mass, radius, temperature, orbital characteristics)<br>
+                ✦ <strong>Missing data strategy:</strong> Preserving maximum information while ensuring analysis integrity
+            </p>
+            
+            <p>
+                <strong>2. Multi-Algorithm Classification Pipeline</strong><br>
+                ✦ <strong>Size classification:</strong> 8-category system (Mars-sized to Super-Jupiter-sized)<br>
+                ✦ <strong>Binary composition:</strong> Rocky/gaseous using 3.0 g/cm³ density threshold<br>
+                ✦ <strong>Method comparison:</strong> Threshold vs Logistic Regression vs Advanced ML
+            </p>
+            
+            <p>
+                <strong>3. Predictive Modeling for Habitability</strong><br>
+                ✦ <strong>Criteria definition:</strong> Temperature (200-350K), radius (0.5-2 R_Earth), energy flux (0.8-1.2x Earth)<br>
+                ✦ <strong>Model validation:</strong> Train/test split (70/30) with proper preprocessing<br>
+                ✦ <strong>Independent testing:</strong> Post-training validation on separately created solar system dataset
+            </p>
+
+            <p>
+                <strong>Advanced Analytics Implementation</strong><br>
+                ✦ <strong>Environment:</strong> Python, Jupyter Notebook<br>
+                ✦ <strong>Libraries:</strong> pandas, numpy, scikit-learn, matplotlib, seaborn<br>
+                ✦ <strong>Approaches:</strong> Statistical analysis, supervised/unsupervised ML, physics validation
+            </p>
+
+            <p>
+                <strong>Robust Data Pipeline</strong><br>
+                ✦ <strong>Strategic data cleaning:</strong> Intelligent handling of 60-80% missing values<br>
+                ✦ <strong>Scale normalization:</strong> Log-scale transformations for multi-order magnitude data<br>
+                ✦ <strong>Feature engineering:</strong> StandardScaler and optimized variable selection<br>
+                ✦ <strong>Quality assurance:</strong> 95th percentile outlier filtering with scientific validation
+            </p>
+        </div>
+
+        <!-- THE RESULTS -->
+        <div class="results-card">
+            <h3>The Results</h3>
+            
+            <p>
+                <strong>Key Results & Performance Metrics</strong><br>
+                <strong>Model Performance</strong><br>
+                ✦ <strong>96.3% accuracy</strong> in predicting detection methods (KNN & SVM)<br>
+                ✦ <strong>86.1% precision</strong> for composition classification vs 83.7% traditional threshold approach<br>
+                ✦ <strong>100% accuracy</strong> on habitability prediction validated independently on solar system data<br>
+                ✦ <strong>4 habitable candidates identified</strong> from 1,639 analyzed (0.2% success rate)
+            </p>
+            
+            <p>
+                <strong>Scientific Validation</strong><br>
+                ✦ <strong>99.9% conformity</strong> with Kepler's third law confirming universal physics<br>
+                ✦ <strong>4 distinct planetary groups</strong> discovered through unsupervised clustering<br>
+                ✦ <strong>391 gaseous vs 209 rocky planets</strong> identified using ML-enhanced classification
+            </p>
+            
+
+            <p>
+                <strong>Key Insights & Innovation</strong><br>
+                <strong>Observational Bias Detection</strong><br>
+                ✦ <strong>Hot Jupiter overrepresentation:</strong> Massive, close-in planets easier to detect via radial velocity<br>
+                ✦ <strong>Earth-like underrepresentation:</strong> Current technological limitations for small, distant planets<br>
+                ✦ <strong>Transit method dominance:</strong> 96.3% prediction accuracy confirmed
+            </p>
+
+            <p>
+                <strong>Physical Relationship Validation</strong><br>
+                ✦ <strong>Stellar-planetary energy transfer:</strong> Stellar temperature correlation with planetary equilibrium (r=0.42)<br>
+                ✦ <strong>Universal gravitational physics:</strong> Kepler's law validation across 5,000+ systems<br>
+                ✦ <strong>Composition patterns:</strong> Clear density-based separation between rocky/gaseous populations
+            </p>
+
+            <p>
+                <strong>Methodological Innovation</strong><br>
+                ✦ <strong>ML-enhanced classification:</strong> 30 additional rocky planets identified vs simple threshold<br>
+                ✦ <strong>Clustering optimization:</strong> Elbow method determining k=4 optimal clusters<br>
+                ✦ <strong>Cross-validation approach:</strong> Independent solar system testing ensuring model robustness
+            </p>
+            
+
+            <p>
+                <strong>Technical Skills Demonstrated</strong><br>
+                <strong>Data Engineering</strong><br>
+                ✦ <strong>Large-scale processing:</strong> 5,000+ observations with complex missing data patterns<br>
+                ✦ <strong>ETL pipeline:</strong> End-to-end data cleaning to model deployment<br>
+                ✦ <strong>Performance optimization:</strong> Efficient handling of astronomical data scales
+            </p>
+
+            <p>
+                <strong>Machine Learning</strong><br>
+                ✦ <strong>Multi-algorithm comparison:</strong> KNN, SVM, Logistic Regression implementation<br>
+                ✦ <strong>Unsupervised learning:</strong> K-Means clustering with optimal parameter selection<br>
+                ✦ <strong>Model validation:</strong> Proper train/test methodology with independent validation<br>
+                ✦ <strong>Feature engineering:</strong> Handling diverse data types and scales
+            </p>
+
+            <p>
+                <strong>Statistical Analysis</strong><br>
+                ✦ <strong>Hypothesis testing:</strong> Quantitative validation with uncertainty assessment<br>
+                ✦ <strong>Correlation analysis:</strong> Multi-parameter relationship identification<br>
+                ✦ <strong>Anomaly detection:</strong> Outlier identification and scientific interpretation
+            </p>
+
+            <p>
+                <strong>Real-World Applications</strong><br>
+                This project demonstrates capabilities directly applicable across industries.<br>
+                <strong>Core Transferable Skills:</strong><br>
+                ✦ <strong>Classification Systems:</strong> Multi-algorithm approach for any categorical prediction tasks<br>
+                ✦ <strong>Large-Scale Data Processing:</strong> Techniques for handling massive datasets with missing values<br>
+                ✦ <strong>Clustering & Pattern Discovery:</strong> Unsupervised learning for segmentation and grouping<br>
+                ✦ <strong>Model Validation:</strong> Robust testing methodologies for production environments<br>
+                ✦ <strong>Anomaly Detection:</strong> Outlier identification applicable to quality control and fraud detection<br>
+                ✦ <strong>Performance Optimization:</strong> Efficient algorithms for processing 5K+ data points
+            </p>
+
+            <p>
+                <strong>Industry Applications:</strong><br>
+                ✦ <strong>Finance:</strong> Risk assessment, fraud detection, customer segmentation<br>
+                ✦ <strong>Healthcare:</strong> Patient classification, treatment optimization<br>
+                ✦ <strong>E-commerce:</strong> Product categorization, recommendation systems<br>
+                ✦ <strong>Manufacturing:</strong> Quality control, predictive maintenance<br>
+                ✦ <strong>Technology:</strong> Content moderation, user behavior analysis
+            </p>
+
+            <p>
+                <strong>Performance Optimization</strong><br>
+                ✦ <strong>Computational efficiency:</strong> Optimized algorithms for 5K+ data points<br>
+                ✦ <strong>Memory management:</strong> Strategic data loading and processing<br>
+                ✦ <strong>Scalable architecture:</strong> Pipeline designed for larger datasets
+            </p>
+
+            <p>
+                <strong>Identified Habitable Candidates</strong><br>
+                <strong>Discovered through ML analysis:</strong><br>
+                ✦ <strong>Kepler-1544 b:</strong> Optimal temperature and size parameters<br>
+                ✦ <strong>Kepler-155 c:</strong> Ideal energy flux and radius conditions<br>
+                ✦ <strong>Kepler-296 e:</strong> Earth-like temperature and size characteristics<br>
+                ✦ <strong>LP 890-9 c:</strong> Recently discovered habitable zone candidate
+            </p>
+
+            <p>
+                <em>Large-scale data processing • Multi-algorithm optimization • Scalable ML pipeline</em>
+            </p>
+        </div>
+        
+        <button id="github" onclick="window.open('https://github.com/cxxhime/nasa-exoplanet-analysis', '_blank')">View Source Code</button>
+    </span>
+
+    <script src="script.js"></script>
+    <script src="../js/carousel.js"></script>
+    <script src="../js/lightbox.js"></script>
+
+<!--CURSEUR-->
+    <script type="text/javascript">
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            let x = e.clientX - 15; 
+            let y = e.clientY - 15; 
+
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            cursor.style.display = "block";
+        });
+
+        document.addEventListener("mouseout", () => {
+            cursor.style.display = "none";
+        });
+    </script>
+</body>
+<!--FOOTER-->
+    <footer>
+        <h4>© 2025 bynanachen. By myself.</h4>
+        <h4>🌱Social Media: 
+            <a href="https://github.com/cxxhime" target="_blank">Github</a>/
+            <a href="https://www.linkedin.com/in/cxxhime/" target="_blank">LinkedIn</a>
+        </h4>
+    </footer>
+</html>
+</body>
+
+<footer>
+    <h4>
+        © 2025 bynanachen. By myself.  
+    </h4>
+    <h4>
+        🌱Social Media: <a href="https://github.com/cxxhime" target="_blank">Github</a>/<a href="https://www.linkedin.com/in/cxxhime/" target="_blank">LinkedIn</a>
+    </h4>
+</footer>
+
+</html>
